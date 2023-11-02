@@ -11,5 +11,11 @@ namespace AmmoTweaks.Settings
     {
         [SynthesisOrder]
         public float Mult = 1f;
+
+        [SynthesisOrder]
+        public float BoltWeight = 0f;
+
+        [SynthesisOrder]
+        public float ArrowWeight = 0f;
     }
 }

@@ -54,7 +54,11 @@ namespace AmmoTweaks
             foreach (var ammogetter in patchammo)
             {
                 var ammo = state.PatchMod.Ammunitions.GetOrAddAsOverride(ammogetter);
-                ammo.Weight = 0;
+                if (ammo.Flags.HasFlag(Ammunition.Flag.NonBolt))
+                    ammo.Weight = Settings.Loot.ArrowWeight;
+                else
+                    ammo.Weight = Settings.Loot.BoltWeight;
+
 
                 if (Settings.Damage.DoRescaling && ammo.Damage != 0)
                 {
